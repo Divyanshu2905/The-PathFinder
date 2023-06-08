@@ -1,0 +1,137 @@
+.whole{
+    background-color: #edf5e1;
+}
+
+.samplestart{
+    width:18px;
+    height:18px;
+    outline: 1px solid black;
+    background-color:rgb(255, 135, 135);
+}
+.samplefinish{
+    background-color: #BCE29E;
+    width:18px;
+    height:18px;
+    outline: 1px solid black;
+}
+.samplewall{
+    background-color: rgb(12, 53, 71);
+    width:18px;
+    height:18px;
+    outline: 1px solid black;
+}
+.struct{
+    margin:25px 0 0;
+}
+.divison{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content: center;  
+}
+
+.Navbar{
+    height: 210px;
+    /* background-color: rgb(194, 222, 220); */
+    background-color: #45A29e;
+    /* color:rgb(248, 246, 244); */
+    color:#edf5e1;
+    border-radius: 20px;
+    margin-top: 11px;
+    margin-left:10px;
+    margin-right: 10px;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    padding-inline-start: 0px;
+}
+li{
+    list-style-type: none;
+    padding-top: 1.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+h1{
+    padding-left: 30px;
+    padding-top: 0px;
+    font-size: 80px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+button{
+    font-size: 30px;
+    color: #edf5e1;
+    border: 0px;
+    background-color: inherit;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+button:hover{
+    color: rgb(82, 109, 130);
+}
+.headnrule{
+    display:flex;
+    padding-top:10px;
+}
+.rules{
+    margin-left: auto;
+    margin-top:10px;
+    margin-right:5px;
+    color:#edf5e1;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.rule{
+    font-size: 20px;
+}
+.rule1{
+    display:inline-block;
+}
+@media (max-width: 1440px){
+    .rules{
+        position: absolute;
+        left: -9999px;
+    }
+}
+
+@media (max-width: 730px) {
+    h1{
+        font-size: 55px;
+        padding-left: 15px;
+    }
+    li{
+        list-style-type: none;
+        padding-top: 7%;
+        padding-left: 3%;
+        padding-right: 3%; 
+    }
+    .Navbar{
+        height: 210px;
+        background-color:  #45A29e;
+        color:#edf5e1;
+        border-radius: 10px;
+        margin-top: 16px;
+        margin-left:5px;
+        margin-right: 5px;
+    }
+    button{
+        font-size: 25px;
+        border: 0px;
+        background-color: inherit;
+    }
+}
+@media (max-width:500px){
+    .struct{
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    .divison{
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    .headnrule{
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+} 
+    
