@@ -17,7 +17,7 @@ export default function Pathfinder(){
     useEffect(() => {
         const initialGrid = getGrid();
         setGrid(initialGrid);
-        }, []); //empty dependency is used when it is to be used once (only the time of initial render)
+        }, []); 
     
     const handleMouseClick=(row,col)=>{
         if (startMoving===false &&finishMoving===false) {
@@ -26,10 +26,7 @@ export default function Pathfinder(){
             }else if(row===finishNodePos.row && col===finishNodePos.col){
                 setfinishMoving(true);
             }
-            // else{
-            //     const newGrid = newGridWithWall(grid, row, col);
-            //     setGrid(newGrid);
-            // }
+            
         }else if(startMoving===true && finishMoving===false){
             const newGrid=newStartGrid(grid,row,col);
             setGrid(newGrid);
@@ -76,7 +73,7 @@ export default function Pathfinder(){
 
     const getGrid=()=>{
         const grid=[];
-        for (let row = 0; row <19; row++) {
+        for (let row = 0; row <20; row++) {
             const currentRow = [];   
             for (let col = 0; col <60; col++) {
                 currentRow.push(createNode(row,col));
@@ -140,7 +137,7 @@ export default function Pathfinder(){
 
 
     const clearPath = () => {
-        for (let row = 0; row <19; row++) { 
+        for (let row = 0; row <20; row++) { 
             for (let col = 0; col <60; col++) {
                 const element = document.getElementById(`node-${row}-${col}`);
                 if (row===startNodePos.row && col===startNodePos.col) {
@@ -168,7 +165,7 @@ export default function Pathfinder(){
     };
     
     function reset(){
-        for (let row = 0; row <19; row++) { 
+        for (let row = 0; row <20; row++) { 
             for (let col = 0; col <60; col++) {
                 const element = document.getElementById(`node-${row}-${col}`);
                 if (row===startNodePos.row && col===startNodePos.col) {
@@ -202,8 +199,6 @@ export default function Pathfinder(){
         const finishNode = grid[finishNodePos.row][finishNodePos.col];
         const visitedNodes = Astar(grid, startNode, finishNode);
         const NodesInShortestPath = getNodesInShortestPath(finishNode);
-        console.log('Visited Nodes:', visitedNodes);
-        console.log('Nodes in Shortest Path:', NodesInShortestPath);
         Animate(visitedNodes,NodesInShortestPath);
     };
 
@@ -213,29 +208,47 @@ export default function Pathfinder(){
         const finishNode = grid[finishNodePos.row][finishNodePos.col];
         const visitedNodes = dijkstra(grid, startNode, finishNode);
         const NodesInShortestPath = getNodesInShortestPath(finishNode);
-        console.log('Visited Nodes:', visitedNodes);
-        console.log('Nodes in Shortest Path:', NodesInShortestPath);
         Animate(visitedNodes,NodesInShortestPath);
     };
 
         return(
         <div>
-            <div className='Navbar'>
-            <div className='headnrule'>
-                <h1 className='title'>The PathFinder</h1>
-                <div className='rules'>
-                    <div className='rule'>⫸StartNode:  <div className='samplestart rule1'></div> FinishNode:  <div className='samplefinish rule1'></div> WallNode:  <div className='samplewall rule1'></div></div>
-                    <div className='rule'>⫸To Create Walls click and drag mouse around the grid</div>
-                    <div className='rule'>⫸To move start/end point click on respective node and then on any other Node</div>
+            <div className="bg">
+            <h1 className="main-heading">The Path Finder</h1>
+
+                <div className="options">
+                    <input type="radio" name="slider" id="initial"></input> 
+                    <input type="radio" name="slider" id="Visualise-Dijkstra"></input>
+                    <input type="radio" name="slider" id="Visualise-A"></input>
+                    <input type="radio" name="slider" id="Clear-Path"></input>
+                    <input type="radio" name="slider" id="Clear-All"></input>
+                    <nav>
+                        <ul>
+                            <li><button onClick={visualize}><label for="Visualise-Dijkstra" className="Visualise-Dijkstra">Visualise Dijkstra</label></button></li>
+                            <li><button onClick={visualizeAstar}><label for="Visualise-A" className="Visualise-A">Visualise A*</label></button></li>
+                            <li><button onClick={clearPath}><label for="Clear-Path" className="Clear-Path">Clear Path</label></button></li>
+                            <li><button onClick={reset}><label for="Clear-All" className="Clear-All">Clear All</label></button></li>
+                        </ul>    
+                        <div class="slider"></div>
+                    </nav>
                 </div>
             </div>
-                <ul>
-                    <li><button onClick={clearPath}>Clear Path</button></li>
-                    <li><button onClick={visualizeAstar}>Visualise A*</button></li>
-                    <li><button onClick={visualize}>Visualise Dijkstra</button></li>
-                    <li><button onClick={reset}>Clear All</button></li>
-                </ul>
+            <div className="wrapper">
+            <a href="#modalbox"><i className="fa-solid fa-info"></i></a>
             </div>
+
+            <div id="modalbox" className="modal">
+                <div className="modalcontent">
+                    <h1>info</h1>
+                    <ul>
+                        <li>start node <i className="fa-solid fa-square" value="1"></i>, finish node <i className="fa-solid fa-square" value="2"></i>, wall node <i className="fa-solid fa-square" value="3"></i></li>
+                        <li>to create wall, click and drag mouse around the grid</li>
+                        <li>to move start/end point click on respective node and then on any other node</li>
+                    </ul>
+                    <a href="#" className="modalclose">&times;</a>
+                </div>
+            </div>
+
             <div className= "struct">
                 {grid.map((row, rowIndex) => {
                     return (<div key={rowIndex} className="divison">

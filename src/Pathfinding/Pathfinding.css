@@ -1,137 +1,228 @@
-.whole{
-    background-color: #edf5e1;
-}
-
-.samplestart{
-    width:18px;
-    height:18px;
-    outline: 1px solid black;
-    background-color:rgb(255, 135, 135);
-}
-.samplefinish{
-    background-color: #BCE29E;
-    width:18px;
-    height:18px;
-    outline: 1px solid black;
-}
-.samplewall{
-    background-color: rgb(12, 53, 71);
-    width:18px;
-    height:18px;
-    outline: 1px solid black;
-}
-.struct{
-    margin:25px 0 0;
-}
 .divison{
     display:flex;
     flex-wrap:nowrap;
     justify-content: center;  
 }
 
-.Navbar{
-    height: 210px;
-    /* background-color: rgb(194, 222, 220); */
-    background-color: #45A29e;
-    /* color:rgb(248, 246, 244); */
-    color:#edf5e1;
-    border-radius: 20px;
-    margin-top: 11px;
-    margin-left:10px;
-    margin-right: 10px;
+/* for options */
+
+.options{
+   
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: rgb(238, 227, 203);
+    /*padding: 25px 30px 30px 30px;*/
+
 }
-ul{
+
+.options nav ul li{
+    list-style: none;
+    float: left;
+    margin-left: 6vw;
+    margin-right: 5vw;
+    /* margin: 0; */
+    padding-left: 1vw;
+    padding-right: 1vw;
+    align-items: center;
+}
+
+
+
+.options nav ul button{
+    width: 100%;
+    background-color: rgb(238, 227, 203);
+    border: none;
+}
+
+.options nav{
+    position: relative;
+    height: 4vw;
+    width: 100%;
+    display: flex;
+    gap: 0;
+    align-items: center;
+}
+
+.options nav label{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 4vw;
+    cursor: pointer;
+    color:  #967E76;
+    font-size: 2vw;
+    position: relative;
+    z-index: 1;
+}
+
+#Visualise-Dijkstra:checked ~ nav label.Visualise-Dijkstra,
+#Visualise-A:checked ~ nav label.Visualise-A,
+#Clear-Path:checked ~ nav label.Clear-Path,
+#Clear-All:checked ~ nav label.Clear-All{
+    color: rgb(238, 227, 203);
+}
+
+input[type="radio"]
+{
+    display: none;
+}
+
+.options nav .slider{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background: #967E76;
+    border-radius: 5px;
+    z-index: 0;
+    left: 0;
+    visibility: hidden;
+    bottom: 0;
+    top:0;
+    transition: all 0.3s ease;
+}
+
+#initial:checked ~ nav .slider{
+    background-color: rgba(255,255,255,0);
+}
+#Visualise-Dijkstra:checked ~ nav .slider{
+    left:4.5%;
+    visibility: visible;
+}
+#Visualise-A:checked ~ nav .slider{
+    left:30%;
+    visibility: visible;
+}
+#Clear-Path:checked ~ nav .slider{
+    left:53.5%;
+    visibility: visible;
+}
+#Clear-All:checked ~ nav .slider{
+    left:75%;
+    visibility: visible;
+}
+
+.bg{
+    background-color:rgb(189, 205, 214);
+    height: 13.5vw;
+    width: 100%;
+    position: absolute;
     display: flex;
     justify-content: center;
-    padding-inline-start: 0px;
-}
-li{
-    list-style-type: none;
-    padding-top: 1.5%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-h1{
-    padding-left: 30px;
-    padding-top: 0px;
-    font-size: 80px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    margin-bottom: 0px;
-    margin-top: 10px;
+    align-items: center;
 }
 
-button{
-    font-size: 30px;
-    color: #edf5e1;
-    border: 0px;
-    background-color: inherit;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}
-button:hover{
-    color: rgb(82, 109, 130);
-}
-.headnrule{
-    display:flex;
-    padding-top:10px;
-}
-.rules{
-    margin-left: auto;
-    margin-top:10px;
-    margin-right:5px;
-    color:#edf5e1;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}
-.rule{
-    font-size: 20px;
-}
-.rule1{
-    display:inline-block;
-}
-@media (max-width: 1440px){
-    .rules{
-        position: absolute;
-        left: -9999px;
-    }
+*{
+    margin: 0;
+    padding: 0;
 }
 
-@media (max-width: 730px) {
-    h1{
-        font-size: 55px;
-        padding-left: 15px;
-    }
-    li{
-        list-style-type: none;
-        padding-top: 7%;
-        padding-left: 3%;
-        padding-right: 3%; 
-    }
-    .Navbar{
-        height: 210px;
-        background-color:  #45A29e;
-        color:#edf5e1;
-        border-radius: 10px;
-        margin-top: 16px;
-        margin-left:5px;
-        margin-right: 5px;
-    }
-    button{
-        font-size: 25px;
-        border: 0px;
-        background-color: inherit;
-    }
+.main-heading{
+    text-align: center;
+    color: rgb(96, 150, 180);
+    margin-bottom: 3.8vw;
+    padding: 0;
+    font-size: 5vw;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
 }
-@media (max-width:500px){
-    .struct{
-        flex-shrink: 0;
-        white-space: nowrap;
-    }
-    .divison{
-        flex-shrink: 0;
-        white-space: nowrap;
-    }
-    .headnrule{
-        flex-shrink: 0;
-        white-space: nowrap;
-    }
-} 
+
+
+
+/*info*/
+
+.fa-info{
+    color: rgb(150, 126, 118);
+    font-size: 2.5vw;
+    align-self: self-end;
+
+}
+
+div a{
+    position: absolute;
+    right: 2vw;
+    top: 1vw;
+}
+
+a i{
+    transition: all 0.3s linear;
+}
+
+a:hover i{
+    transform: scale(1.4);
+}
+
+.modal{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(77,77,77,0.4);
+    transition: all 0s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal:target{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modalcontent{
+    position: relative;
+    background-color: #EEE9DA;
+    z-index: 2;
+    width: 50%;
+    height: 15vw;
+    margin-top: 20vw;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+    margin-top: 0px;
     
+}
+
+.modalcontent h1{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3vw;
+    text-align: center;
+    margin: 0;
+}
+
+.modalcontent>ul> li{
+    margin-top: 1vw;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.7vw;
+    text-align: justify;
+    margin-left: 0.5vw;
+    font-weight: 400;
+}
+
+.modalclose{
+    position: absolute;
+    font-weight: 700;
+    top: 0;
+    right: 1vw;
+    color: #585858;
+    text-decoration:double;
+    font-size: 3vw;
+}
+
+i[value="1"]{
+    color:rgb(255, 135, 135);
+}
+
+i[value="2"]{
+    color:#BCE29E;
+}
+i[value="3"]{
+    color:rgb(12, 53, 71);
+}
+
+.struct{
+    padding-top: 15vw;
+}
