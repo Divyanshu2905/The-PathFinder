@@ -1,70 +1,21 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The Path-Finder
 
-## Available Scripts
+The project aims to implement and compare two popular pathfinding algorithms, Dijkstra and A* (A-Star), in order to find the shortest path between two points in a given graph. The project's main objective is to analyze the efficiency and performance of these algorithms in different scenarios.
 
-In the project directory, you can run:
+## Dijkstra
 
-### `npm start`
+The Dijkstra algorithm is a graph search algorithm used to determine the shortest path between a starting node and all other nodes in a weighted graph. It explores all possible paths from the starting node, assigning tentative distances to each node until the shortest path is found.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## A*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The A* algorithm combines elements of Dijkstra's algorithm with heuristics to improve efficiency. It uses a heuristic function, typically an estimated distance from a node to the goal, to guide the search towards the most promising paths. This heuristic helps prioritize exploration and can significantly reduce the number of nodes visited compared to Dijkstra's algorithm.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project will also include a user interface to input the graph and define the start and goal nodes. The implemented algorithms will then compute and display the shortest path between these nodes, along with the associated cost. Additionally, the project will record and compare the number of nodes visited by each algorithm to evaluate their efficiency.
 
-### `npm run build`
+Through this project, users will gain a better understanding of the differences and trade-offs between Dijkstra and A* algorithms for pathfinding. They will be able to observe how the choice of algorithm can affect the computational time and resource requirements for finding the shortest path in various scenarios.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can find live static site on: https://divyanshu2905.github.io/The-PathFinder/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
