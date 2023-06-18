@@ -16,6 +16,6 @@ The project will also include a user interface to input the graph and define the
 
 Through this project, users will gain a better understanding of the differences and trade-offs between Dijkstra and A* algorithms for pathfinding. They will be able to observe how the choice of algorithm can affect the computational time and resource requirements for finding the shortest path in various scenarios.
 
-You can find live static site on: https://divyanshu2905.github.io/The-PathFinder/
+## You can find live static site on: [The-PathFinder](https://divyanshu2905.github.io/The-PathFinder/)
 
 
