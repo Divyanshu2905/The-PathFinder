@@ -18,4 +18,8 @@ Through this project, users will gain a better understanding of the differences 
 
 ## You can find live static site on: [The-PathFinder](https://divyanshu2905.github.io/The-PathFinder/)
 
+## Developers
+- [Divyanshu2905](https://github.com/Divyanshu2905)
+- [anisha-singh07](https://github.com/anisha-singh07)
+
 
