@@ -1,5 +1,5 @@
 
-# The Path-Finder
+# [The Path-Finder](https://divyanshu2905.github.io/The-PathFinder/)
 
 The project aims to implement and compare two popular pathfinding algorithms, Dijkstra and A* (A-Star), in order to find the shortest path between two points in a given graph. The project's main objective is to analyze the efficiency and performance of these algorithms in different scenarios.
 
@@ -15,8 +15,6 @@ The A* algorithm combines elements of Dijkstra's algorithm with heuristics to im
 The project will also include a user interface to input the graph and define the start and goal nodes. The implemented algorithms will then compute and display the shortest path between these nodes, along with the associated cost. Additionally, the project will record and compare the number of nodes visited by each algorithm to evaluate their efficiency.
 
 Through this project, users will gain a better understanding of the differences and trade-offs between Dijkstra and A* algorithms for pathfinding. They will be able to observe how the choice of algorithm can affect the computational time and resource requirements for finding the shortest path in various scenarios.
-
-## You can find live static site on: [The-PathFinder](https://divyanshu2905.github.io/The-PathFinder/)
 
 ## Developers
 - [Divyanshu2905](https://github.com/Divyanshu2905)
